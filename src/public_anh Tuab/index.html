@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <script src="https://canvas-gauges.com/download/latest/all/gauge.min.js"></script>
+  <script src="apexchart/apexcharts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="keyboard/keyboard.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <link href="/css/chart/c3.min.css" rel="stylesheet">
+  <script src="/chart.js/c3.min.js"></script>
+  <script src="/chart.js/d3.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icons?family=Material+Icons"> -->
+</head>
+
+<!-- ========================================================================================================================= -->
+<!--  ================================================== HEADER ============================================================== -->
+<!-- ========================================================================================================================= -->
+
+<header class="header">
+  <div class="menubar">
+    <h2 class="header_navbar">
+      <img src="img/logo.png" alt="Dang load anh" style="width: 200px;" />
+      <!--  ==================================== navigation ====================================-->
+      <nav class="nav nav-tabs header_navbar-list" style="border: none;">
+        <a class="nav-link header_navbar-item" id="home-tab" data-toggle="tab" href="#home" style="color: red;">Thí
+          nghiệm</a>
+        <a class="nav-link header_navbar-item" id="product-tab" data-toggle="tab" href="#product"
+          style="color: red;">Báo Cáo</a>
+        <a class="nav-link header_navbar-item" id="contact-tab" data-toggle="tab" href="#contact"
+          style="color: red;">Cài
+          đặt</a>
+      </nav>
+    </h2>
+  </div>
+  <!--  ==================================== navigation on the right ====================================-->
+  <div class="statusbar" style="display: flex">
+    <div class="group-icon1" style="display: flex">
+      <div style="text-align: center; margin-right: 10px">
+        <i class="icon1 fa fa-user" aria-hidden="true"></i><br/>
+        <div style="margin-top: 5px;">Linh Hihi</div>
+      </div>
+      <div style="text-align: center; margin-right: 10px; position: relative;" id="hanldeWifi">
+        <i class="icon1 fa fa-wifi" aria-hidden="true"></i><br/>
+        <div style="margin-top: 5px;">Wifi Free</div>
+        <div id="wifi">
+          <div style="padding: 5px;">
+            wifi1
+          </div>
+          <div style="padding: 5px;">
+            wifi2
+          </div>
+          <div style="padding: 5px;">
+            wifi3
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-right: 10px">
+        <i class="icon1 fa fa-battery-0" aria-hidden="true"></i><br />
+        <div style="margin-top: 5px;">85%</div>
+      </div>
+
+      <div>
+        <i class="fa fa-power-off" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ========================================================================================================================= -->
+<!--  ================================================== BODY ============================================================== -->
+<!-- ========================================================================================================================= -->
+
+<body class="content">
+  <div class="tab-content page2">
+    <!--  ==================================== Content in page Thi Nghiem ====================================-->
+    <div class="tab-pane fade show active" id="home">
+      <div class="body row">
+        <!--  ==================================== Thanh slide bar====================================-->
+        <!--  ========================================================================================-->
+        <div class="list col-md-2 col-sm-3" style="padding-left: 25px;
+      ">
+          <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">1</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+          <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">T100</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+          <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+          <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+          <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+          <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+
+          <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+          <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div>
+        </div>
+
+        <!--  ==================================== Khoi do thi====================================-->
+        <!--  ========================================================================================-->
+        <div class="monitor-section chart-monitor col-md-10 col-sm-9" style="padding: 0;
+        margin: 0; display: flex;visibility: hidden;display: none;">
+          <div class="chart">
+            <div class="mdl-grid">
+              <!--  ==================================== do thi GAUGE NHIET DO====================================-->
+              <div class="sub-monitor" style="visibility: hidden;display: none;
+              width: 100%;">
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 1</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_cpu"></div>
+                  </div>
+                </div>
+                <!--  ==================================== do thi GAUGE DO AM====================================-->
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 2</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_ram"></div>
+                  </div>
+                </div>
+                <!--  ==================================== do thi GAUGE CAN NANG====================================-->
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 3</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_3"></div>
+                  </div>
+                </div>
+              </div>
+              <!--  ==================================== do thi BIEU DO DUONG====================================-->
+              <div id="cpu_chart_panel1" class="cpu_chart_panel mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp" style="position:relative;overflow: inherit;display: none;">
+                <div class="show-sub-monitor opensection mdl-shadow--2dp" style="
+                position: absolute;
+                background-color: #006da1;
+                top: -30px;
+                width: 50px;
+                height: 50px;
+                right: -25px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 50px;
+                font-weight: bold;
+                border-radius: 100%;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;">=</div>
+                <div class="mdl-card__supporting-text">
+                  <div class="chart">
+                    <div class="toggle-chart-table-item cpu-chart" id="cpu1" style="height: 300px;"></div>
+                    <div class="toggle-chart-table-item" id="myTable" style="height: 300px;display:none;">
+                      <table>
+                        <tr>
+                          <th>Company</th>
+                          <th>Contact</th>
+                          <th>Country</th>
+                          <th>Country</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <input data-target="cpu" class="toggle-chart-table" type="radio" name="chart" checked="true"
+                      style="margin-left: 100px; color: aqua;"> Biểu đồ đường
+                    <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px" id="none_chart"> Bảng
+                    <script>
+
+                    </script>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="cpu_chart_panel2" class="cpu_chart_panel mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp" style="position:relative;overflow: inherit;display: none;">
+                <div class="show-sub-monitor opensection mdl-shadow--2dp" style="
+                position: absolute;
+                background-color: #006da1;
+                top: -30px;
+                width: 50px;
+                height: 50px;
+                right: -25px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 50px;
+                font-weight: bold;
+                border-radius: 100%;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;">=</div>
+                <div class="mdl-card__supporting-text">
+                  <div class="chart">
+                    <div class="toggle-chart-table-item cpu-chart" id="cpu2" style="height: 300px;"></div>
+                    <div class="toggle-chart-table-item" id="myTable" style="height: 300px;display:none;">
+                      <table>
+                        <tr>
+                          <th>Company</th>
+                          <th>Contact</th>
+                          <th>Country</th>
+                          <th>Country</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>1</td>
+                          <td>a</td>
+                          <td>a</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <input data-target="cpu" class="toggle-chart-table" type="radio" name="chart" checked="true"
+                      style="margin-left: 100px; color: aqua;"> Biểu đồ đường
+                    <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px" id="none_chart"> Bảng
+                    <script>
+
+                    </script>
+                  </div>
+                </div>
+              </div>
+
+              <div class="monitor-section control-section monitor w-100">
+                <div class="monitorcontent w-100" style="display: flex;flex-wrap: wrap;">
+                  <div style="display: flex;">
+                    <div style="width: 100%">
+                      <div class="row" style="min-width: max-content;">
+                        <div class="col-md-6" style="
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 100%;
+                            background-color: white;
+                           
+                            ">
+                        </div>
+                        <div class="col-md-6">
+                          <div>
+                            <b>Đo độ ẩm</b>
+                          </div>
+                          <div>PT100</div>
+                          <div>2021-10-02 11:04</div>
+                        </div>
+                      </div>
+                      <span style="padding-left: 25px;">34,7 C</span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                      <button id="start/stop" onclick="toggle()" type="button" class="button button1" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="icon1 fa fa-play-circle" aria-hidden="false"></i>
+                        <span id="btn" style="color: #fff"> Start</span>
+                      </button>
+                      <!-- Rounded switch -->
+                      <button type="button" class="button button2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="reset()">
+                        <i class="icon2 fa fa-tags" aria-hidden="false"></i>
+                        <span style="color: #000"> Đo lại</span>
+                      </button>
+                      <button type="button" class="button button4" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                        style="padding: 20px; margin: 5px;">
+                        <i class="icon2 fa fa-area-chart" aria-hidden="false"></i>
+                        <span style="color: #000"> Lượt mới</span>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel3">
+                                Bạn có muốn tạo lượt mới không?
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <div class="modal-body"></div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                No
+                              </button>
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                Yes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="button button4" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                        style="padding: 0px">
+                        <i class="icon2 fa fa-save" aria-hidden="false"></i>
+                        <span style="color: #000"> Lưu bản đo</span>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel2">
+                                Lưu kết quả đo
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <span>
+                                Kết quả đo của bài sẽ được lưu với tên<b>Tiến Đạt - 5A</b>
+                                <br />
+                                - Chọn <b>Đồng ý</b> để lưu dữ liệu <br />
+                                - Chịn <b>Hủy</b> để đóng cửa sổ này <br />
+                              </span>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!--  ==================================== Content in page Bao Cao====================================-->
+    <div class="tab-pane fade page2 " id="product">
+      <p>
+        Tempora culpa magna ipsum class diam qui dicta ad architecto sequi.
+        Adipisicing, posuere turpis ipsa facilis, ducimus accumsan, nibh
+        velit? Massa aut nulla vitae? Maxime? Integer nihil rhoncus fermentum
+        dolor? Illum mattis ad sed blandit mollit. Condimentum nisi,
+        accusantium egestas mattis penatibus quisquam conubia natus. Sit illum
+        posuere? Aperiam inceptos harum habitasse integer quisquam, iaculis
+        mollis, aenean fugit feugiat molestiae, ab porttitor sed expedita erat
+        animi ea hac fuga ornare magnam erat eu iste vulputate sapiente sem
+        aptent magnam minima platea eius morbi maxime harum, ante quae
+        perspiciatis? Condimentum ridiculus malesuada voluptatum aut eveniet
+        deserunt iaculis, convallis ducimus anim expedita.
+      </p>
+    </div>
+    <!--  ==================================== Content in page Cai Dat====================================-->
+    <div class="tab-pane fade" id="contact">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="">
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne" class="styleButton">
+              <i class="icon1 fa fa-user" aria-hidden="true"></i>Học sinh
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="position: relative;">
+              <form>
+                <div style="display: flex">
+                  <div style="width: 40%; margin-right: 5%">
+                    <label>Tên học sinh</label><br />
+                    <input type="text" class="styleInput use-keyboard-input" />
+                  </div>
+                  <div style="width: 40%; margin-left: 5%">
+                    <label>Tên học sinh</label><br />
+                    <input type="text" class="styleInput use-keyboard-input" />
+                  </div>
+                </div>
+              </form>
+              <div class="save">
+                <i class="icon1 fa fa-save" aria-hidden="true"></i>Lưu
+              </div>
+              <div style="margin-top: 100px">
+                Vui lòng nhập tên và lớp của bạn Vì thông tin này sẽ được đính
+                kèm kết quả thí nhiệm, bởi vậy hãy nhập chính xác thông tin
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="styleButton collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              <i class="icon1 fa fa-wifi" aria-hidden="true"></i>Cài đặt mạng
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="position: relative; height: 200px">
+              <form>
+                <div style="display: flex">
+                  <div style="width: 40%; margin-right: 5%">
+                    <label>Wifi</label><br />
+                    <input type="text" class="styleInput use-keyboard-input" />
+                  </div>
+                  <div style="width: 40%; margin-left: 5%">
+                    <label>Mật khẩu</label><br />
+                    <input type="text" class="styleInput use-keyboard-input" />
+                  </div>
+                </div>
+              </form>
+              <div class="save" style="text-align: center">Kết nối</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="styleButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              <i class="icon1 fa fa-cog" aria-hidden="true"></i>Cài đặt khác
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="position: relative; height: 200px">
+              <div>Chọn ngôn ngữ muốn hiển thị</div>
+              <div style="font-weight: bold">
+                <input type="radio" name="nn" /> Tiếng Việt
+                <input type="radio" name="nn" /> English
+              </div>
+              <div class="save">
+                <i class="icon1 fa fa-save" aria-hidden="true"></i>Lưu
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  ==================================== Thong Tin====================================-->
+      <div class="information">
+        <div class="titleIn4">
+          <i class="fas fa-info-circle"></i>Thông tin
+        </div>
+        <div>
+          Long body text - Minantia non modo formaeque in meis acervo
+          formaeque gravitate erat indigestaque habentia fixo mutatas aliud
+          orbis retinebat qui non alta Long body text - Minantia non modo
+          formaeque in meis acervo formaeque gravitate erat indigestaque
+          habentia fixo mutatas aliud orbis retinebat qui non alta Long body
+          text - Minantia non modo formaeque in meis acervo formaeque
+          gravitate erat indigestaque habentia fixo mutatas aliud orbis
+          retinebat qui non alta Long body text - Minantia non modo formaeque
+          in meis acervo formaeque gravitate erat indigestaque habentia fixo
+          mutatas aliud orbis retinebat qui non alta
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  ==================================== SCript ====================================-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Import and configure the Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+  <script src="keyboard/keyboard.js"></script>
+  
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', { packages: ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['X', 'Y', 'Z'],
+      [0, 4, 5],
+      [1, 2, 6],
+      [2, 4, 8],
+      [3, 6, 10],
+      [4, 4, 11],
+      [5, 8, 13],
+      [6, 12, 15],
+      [7, 15, 19],
+      [8, 25, 21],
+      [9, 34, 23],
+      [10, 50, 27]
+    ]);
+
+    var options = {
+      height: 200,
+      width: 800,
+      legend: 'none',
+      colors: ['#9575cd', '#33ac71'],
+      pointShape: 'diamond',
+      trendlines: {
+        0: {
+          type: 'exponential',
+          pointSize: 20,
+          opacity: 0.6,
+          pointsVisible: false
+        },
+        1: {
+          type: 'linear',
+          pointSize: 10,
+          pointsVisible: true
+        }
+      }
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div_2'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+<!--Du lieu tra ve-->
+
+<!-- <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC2q4rXmLAmV2d5HKLWlUWY3MAvYLPMoso",
+    authDomain: "iotguy-dashboard.firebaseapp.com",
+    databaseURL: "https://iotguy-dashboard.firebaseio.com",
+    projectId: "iotguy-dashboard",
+    storageBucket: "iotguy-dashboard.appspot.com",
+    messagingSenderId: "249564343788",
+    appId: "1:249564343788:web:b7004b7c8e01eba925a4c9",
+    measurementId: "G-NDWXDZ2CSV"
+  };
+  firebase.initializeApp(config);
+  firebase.analytics();
+
+</script> -->
+
+</html>

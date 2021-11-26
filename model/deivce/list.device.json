@@ -1,0 +1,26 @@
+[
+    {
+        "deviceType": "Cam bien nhiet do",
+        "deviceName": "PT100",
+        "lastUpdate": "2021-10-10 11:11:00",
+        "lastValue": "35"
+    },
+    {
+        "deviceType": "Cam bien do am",
+        "deviceName": "DHT11",
+        "lastUpdate": "2021-10-10 22:11:11",
+        "lastValue":  "80"
+    },
+    {
+        "deviceType": "LoadCell",
+        "deviceName": "LC51",
+        "lastUpdate": "2021-10-10 11:11:22",
+        "lastValue": "1000"
+    },
+    {
+        "deviceType": "Cam bien nhiet do",
+        "deviceName": "PT100",
+        "lastUpdate": "2021-10-10 11:11:33",
+        "lastValue": "35"
+    }
+]

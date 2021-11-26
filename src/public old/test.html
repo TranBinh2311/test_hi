@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list{
+      background-color: #615a5a;
+      padding: 5px;
+      width: 240px;
+    }
+    .item{
+      position: relative;
+      background-color: white;
+      display: flex;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .green{
+      background-color: rgb(96, 255, 96);;
+    }
+    .notifi{
+      position: absolute;
+        top: -10px;
+        left: -10px;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        border: 3px solid white;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        box-shadow: 0px 0px 4px 1px black;
+    }
+    .lside, .rside{
+      width: 50%;
+    }
+    .rside{
+      text-align: right;
+      font-style: italic;
+      padding: 5px;
+    }
+    .image{
+        margin: 3px;
+        background-color: grey;
+        width: 70px;
+        height: 70px;
+        border-radius: 70px;
+    }
+    .temp{
+      margin: 3px;
+    }
+    .title{
+      font-size: 20px;
+      font-weight: bold;
+      white-space:nowrap;
+      margin-bottom: 8px;
+      margin-right: 10px;
+    }
+    .type{
+      white-space:nowrap;
+      margin-bottom: 8px;
+      margin-right: 10px;
+    }
+    .date{
+      font-size: 14px;
+      white-space:nowrap;
+      margin-bottom: 8px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="list">
+    <div class="item">
+      <div class="notifi">
+        1
+      </div>
+      <div class="lside">
+        <div class="image"></div>
+        <div class="temp">23*C</div>
+      </div>
+      <div class="rside">
+        <div class="title">Đo nhiệt độ</div>
+        <div class="type">T100</div>
+        <div class="date">23-11-2000 14:30:32</div>
+      </div>
+    </div>
+    <div class="item green">
+      <div class="notifi">
+        3
+      </div>
+      <div class="lside">
+        <div class="image"></div>
+        <div class="temp">23*C</div>
+      </div>
+      <div class="rside">
+        <div class="title">Đo nhiệt độ</div>
+        <div class="type">T100</div>
+        <div class="date">23-11-2000 14:30:32</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="notifi">
+        5
+      </div>
+      <div class="lside">
+        <div class="image"></div>
+        <div class="temp">23*C</div>
+      </div>
+      <div class="rside">
+        <div class="title">Đo nhiệt độ</div>
+        <div class="type">T100</div>
+        <div class="date">23-11-2000 14:30:32</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

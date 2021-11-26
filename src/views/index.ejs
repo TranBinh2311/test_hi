@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <script src="https://canvas-gauges.com/download/latest/all/gauge.min.js"></script>
+  <script src="/apexchart/apexcharts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="/keyboard/keyboard.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <link href="/css/chart/c3.min.css" rel="stylesheet">
+  <script src="/chart.js/c3.min.js"></script>
+  <script src="/chart.js/d3.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./fontawesome-free-5.15.4-web/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icons?family=Material+Icons"> -->
+</head>
+
+<!-- ========================================================================================================================= -->
+<!--  ================================================== HEADER ============================================================== -->
+<!-- ========================================================================================================================= -->
+
+<header class="header">
+  <div class="menubar">
+    <h2 class="header_navbar">
+      <div style= "justify-content: center; margin-left: 10px;">
+        <img src="/img/logo_1.jpeg" alt="Loading" style="width: 200px;" />
+     </div>
+      <!--  ==================================== navigation ====================================-->
+      <!-- <nav class="nav nav-tabs header_navbar-list" style="border: none;">
+        <a class="nav-link header_navbar-item" id="home-tab" data-toggle="tab" href="#home" style="color: red;">Thí
+          nghiệm</a>
+        <a class="nav-link header_navbar-item" id="product-tab" data-toggle="tab" href="#product"
+          style="color: red;">Báo Cáo</a>
+        <a class="nav-link header_navbar-item" id="contact-tab" data-toggle="tab" href="#contact"
+          style="color: red;">Cài
+          đặt</a>
+      </nav> -->
+      <nav class="nav nav-tabs header_navbar-list" style="border: none; margin-left: 30px;">
+        <a class="nav-link header_navbar-item" id="home-tab" data-toggle="tab" href="#home" style="color: red;">Thí
+          nghiệm</a>
+        <a class="nav-link header_navbar-item" id="product-tab" data-toggle="tab" href="#product"
+          style="color: red;">Báo Cáo</a>
+        <a class="nav-link header_navbar-item" id="contact-tab" data-toggle="tab" href="#contact"
+          style="color: red;">Cài
+          đặt</a>
+      </nav>
+    </h2>
+  </div>
+  <!--  ==================================== navigation on the right ====================================-->
+  <div class="statusbar" style="display: flex">
+    <div class="group-icon1" style="display: flex">
+      <div style="text-align: center; margin-right: 10px">
+        <i class="icon1 fa fa-user" aria-hidden="true"></i><br />
+        <div id="username" style="margin-top: 5px;">UserName</div>
+      </div>
+      <div style="text-align: center; margin-right: 10px; position: relative;" id="hanldeWifi">
+        <i class="icon1 fa fa-wifi" aria-hidden="true"></i><br />
+        <div style="margin-top: 5px;">Wifi Free</div>
+        <div id="wifi">
+          <div style="padding: 5px;">
+            wifi1
+          </div>
+          <div style="padding: 5px;">
+            wifi2
+          </div>
+          <div style="padding: 5px;">
+            wifi3
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-right: 10px">
+        <i class="icon1 fa fa-battery-0" aria-hidden="true"></i><br />
+        <div style="margin-top: 5px;">85%</div>
+      </div>
+
+      <div id="poweroff">
+        <i class="fa fa-power-off" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ========================================================================================================================= -->
+<!--  ================================================== BODY ============================================================== -->
+<!-- ========================================================================================================================= -->
+
+<body class="content">
+  <div class="tab-content page2">
+    <!--  ==================================== Content in page Thi Nghiem ====================================-->
+    <div class="tab-pane fade show active" id="home">
+      <div class="body row">
+        <div id="queueDevice" class="list col-md-3 col-sm-3" style="padding-left: 25px">
+          <% listDeivce.forEach(function(listd) { %>
+            <div id="<%=listd.deviceId%>" class="item opensection" data-target="monitor-section">
+              <!-- <div class="notifi" style=" visibility: hidden">1</div> -->
+              <div class="notifi"></div>
+              <div class="lside">
+                <div class="temp" id="lastValue<%=listd.deviceId%>">
+                  <strong>
+                    <%=listd.lastValue%>
+                  </strong>
+                </div>
+              </div>
+              <div class="rside">
+                <div class="title">
+                  <%=listd.deviceType%> :<b>
+                      <%=listd.deviceName%>
+                    </b>
+                </div>
+              </div>
+            </div>
+            <%}); %>
+             <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+            <div class="item opensection" data-target="monitor-section" style="display: inline-flex;">
+              <div class="notifi">1</div>
+              <div class="">
+                <div class="temp">23°C</div>
+              </div>
+              <div style="padding-left: 5px ;" >
+                <div class="title">Temp: <b>DHT11</b></div> 
+              </div>
+            </div>
+             <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+            <div class="item opensection" data-target="monitor-section">
+              <div class="notifi">2</div>
+              <div class="">
+                <div class="temp">85%</div>
+              </div>
+              <div style="padding-left: 5px ;" >
+                <div class="title">Hum: <b>SHT30</b></div> 
+              </div>
+            </div>
+             <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+        </div>
+        <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">1</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+        <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">T100</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+        <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+        <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+        <!--  ==================================== Khoi con mau xanh trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">3</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+        <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+
+        <!--  ==================================== Khoi con mau trang trong thanh slide bar====================================-->
+        <!-- <div class="item opensection" data-target="monitor-section">
+            <div class="notifi">5</div>
+            <div class="lside">
+              <div class="image"></div>
+              <div class="temp">23*C</div>
+            </div>
+            <div class="rside">
+              <div class="title">Chức năng đo</div>
+              <div class="type">Tên cảm biến</div>
+              <div class="date">23-11-2000 14:30</div>
+            </div>
+          </div> -->
+
+        <!--  ==================================== Khoi do thi====================================-->
+        <!--  ========================================================================================-->
+        <div class="monitor-section chart-monitor col-md-9 col-sm-9" style="padding: 0;
+        margin: 0; display: flex;visibility: hidden;display: none;">
+          <div class="chart">
+            <div class="mdl-grid">
+              <!--  ==================================== do thi GAUGE NHIET DO====================================-->
+              <!-- <div class="sub-monitor" style="visibility: hidden;display: none;
+              width: 100%;">
+                <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 1</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_cpu"></div>
+                  </div>
+                </div> -->
+              <!--  ==================================== do thi GAUGE DO AM====================================-->
+              <!-- <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 2</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_ram"></div>
+                  </div>
+                </div> -->
+              <!--  ==================================== do thi GAUGE CAN NANG====================================-->
+              <!-- <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                    <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">Lần đo 3</h2>
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    <div id="guage_3"></div>
+                  </div>
+                </div>
+              </div> -->
+              <!--  ==================================== do thi BIEU DO DUONG====================================-->
+              <div id="cpu_chart_panel1" class="cpu_chart_panel mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp"
+                style="position:relative;overflow: inherit;display: none;">
+                <div class="show-sub-monitor opensection mdl-shadow--2dp" style="
+                position: absolute;
+                background-color: #006da1;
+                top: -30px;
+                width: 50px;
+                height: 60px;
+                right: -25px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 50px;
+                font-weight: bold;
+                border-radius: 100%;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;">=</div>
+                <div class="mdl-card__supporting-text">
+                 
+
+                  <div class="chart">
+                    <div class="toggle-chart-table-item" id="chartLine" style="height: 200px;"></div>
+                    <div class="toggle-chart-table-item" id="myTable_1" style="height: 200px;display:none;">
+                      <table style="overflow: auto;">
+                        <tr>
+                          <th>Thời gian</th>
+                          <th>Lần đo 1</th>
+                          <th>Lần đo 2</th>
+                          <th>Lần đo 3</th>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="toggle-chart-table-item" id="miterChart" style="height: 230px;display:none;">
+                      <div class="mdl-grid">
+                        <!--  ==================================== do thi GAUGE NHIET DO====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 1</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_1"></div>
+                            <script>
+                              var chartGause1 = c3.generate({
+                                bindto: "#guage_1",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 1', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+                                  min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  max: 100, // 100 is default
+                                },
+                                color: {
+                                  pattern: ['#8892F1', '#7A83D8', '#5F66A8', '#363A60'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+                            </script>
+                          </div>
+                        </div>
+                        <!--  ==================================== do thi GAUGE DO AM====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 2</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_2"></div>
+                            <script>
+                              var chartGause2 = c3.generate({
+                                bindto: "#guage_2",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 2', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+                                  //        label: {
+                                  //            format: function(value, ratio) {
+                                  //                return value;
+                                  //            },
+                                  //            show: false // to turn off the min/max labels.
+                                  //        },
+                                  //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  //    max: 100, // 100 is default
+                                  //    units: ' %',
+                                  //    width: 39 // for adjusting arc thickness
+                                },
+                                color: {
+                                  pattern: ['#FFAA77', '#E5996B', '#B27653', '#996647'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+
+                            </script>
+                          </div>
+                        </div>
+                        <!--  ==================================== do thi GAUGE CAN NANG====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 3</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_3"></div>
+                            <script>
+                              var chartGause3 = c3.generate({
+                                bindto: "#guage_3",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 3', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+                                  //        label: {
+                                  //            format: function(value, ratio) {
+                                  //                return value;
+                                  //            },
+                                  //            show: false // to turn off the min/max labels.
+                                  //        },
+                                  //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  //    max: 100, // 100 is default
+                                  //    units: ' %',
+                                  //    width: 39 // for adjusting arc thickness
+                                },
+                                color: {
+                                  pattern: ['#7DDC1F', '#70C61B', '#579A15', '#aB8412'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+                              console.log("chart3 : ", chartGause3);
+                            </script>
+                          </div>
+                        </div>
+                      </div>
+                      <script>
+
+                      </script>
+                    </div>
+
+                    <!-- <input data-target="chartLine_1" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px; color: aqua;"> Biểu đồ đường
+                    <input data-target="myTable_1" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px" id="none_chart"> Bảng
+                    <input data-target="miterChart_1" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px" id="none_chart"> Miter -->
+                      <div style="display:flex; width: 100%;">
+                        <div style="width: 50%;">
+                            <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked= "true"
+                            style="margin-left: 25px; color: aqua; font-size: 20px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                          <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
+                            style="margin-left: 25px; font-size: 20px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
+                          <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
+                            style="margin-left: 25px ;font-size: 20px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
+                        </div>
+  
+                        <div style="width: 50%;">
+                                <button id="start/stop" onclick="toggle()" type="button" class="button button1"
+                              data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                              <span id="btnStart" style="color: #fff ;font-size: 10px"> Start</span>
+  
+  
+                            </button>
+                              <!-- Rounded switch -->
+                            <button type="button" class="button button2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                              id="DolaiBtn">
+                              <!-- onclick="reset()" -->
+                              <!-- <i class="icon2 fa fa-tags" aria-hidden="false"></i> -->
+                              <span style="color: #000 ;font-size: 10px "> Đo lại</span>
+                            </button>
+  
+                            <button type="button" id="luotMoi" onclick="newMer()" class="button button3" data-bs-toggle="modal" style="padding: 5px; ">
+                                <!-- <i class="icon2 fa fa-area-chart" aria-hidden="false"></i> -->
+                                <span style="color: #000 ;font-size: 10px"> Lượt mới</span>
+                            </button>
+  
+                            <button id="saveModel" type="button" class="button button4" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="padding: 5px">
+                                <!-- <i class="icon2 fa fa-save" aria-hidden="false"></i> -->
+                                <span style="color: #000;font-size: 10px" > Lưu</span>
+                            </button>
+  
+                            <input type="file" id= "load-file" hidden="hidden">
+                            <button id = "loadFile-button" type="button" class="button button4" style="padding: 5px">
+                                <!-- <i class="icon2 fa fa-file" aria-hidden="false"></i> -->
+                                <span style="color: #000;font-size: 10px">Xem lại</span>
+                            </button>
+                        </div>
+                      </div>
+
+                    <!-- <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked="true"
+                      style="margin-left: 100px; color: aqua; font-size: 20px;"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Biểu đồ đường</span>
+                    <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px; font-size: 20px;" id="none_chart"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Bảng</span>
+                    <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
+                      style="margin-left: 100px ;font-size: 20px;" id="none_chart"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Miter</span> -->
+                  </div>
+                </div>
+              </div>
+
+              <div id="cpu_chart_panel2" class="cpu_chart_panel mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp"
+                style="position:relative;overflow: inherit;display: none;">
+                <div class="show-sub-monitor opensection mdl-shadow--2dp" style="
+                position: absolute;
+                background-color: #006da1;
+                top: -30px;
+                width: 50px;
+                height: 50px;
+                right: -25px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 50px;
+                font-weight: bold;
+                border-radius: 100%;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                -o-user-select: none;
+                user-select: none;">=</div>
+                <div class="mdl-card__supporting-text">
+                  
+                  <div class="chart">
+                    <div class="toggle-chart-table-item-2" id="chartLine_2" style="height: 200px;"></div>
+                    <div class="toggle-chart-table-item-2" id="myTable_2" style="height: 200px;display:none;">
+                      <table style="overflow: auto;">
+                        <tr>
+                          <th>Thời gian</th>
+                          <th>Lần đo 1</th>
+                          <th>Lần đo 2</th>
+                          <th>Lần đo 3</th>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="toggle-chart-table-item-2" id="miterChart_2" style="height: 230px;display:none;">
+                      <div class="mdl-grid">
+                        <!--  ==================================== do thi GAUGE NHIET DO====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 1</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_4"></div>
+                            <script>
+                              var chartGause1_1 = c3.generate({
+                                bindto: "#guage_4",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 1', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+
+                                  min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  max: 100, // 100 is default
+                                },
+                                color: {
+                                  pattern: ['#8892F1', '#7A83D8', '#5F66A8', '#363A60'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+                            </script>
+
+                          </div>
+                        </div>
+                        <!--  ==================================== do thi GAUGE DO AM====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 2</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_5"></div>
+                            <script>
+                              var chartGause2_1 = c3.generate({
+                                bindto: "#guage_5",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 2', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+                                  //        label: {
+                                  //            format: function(value, ratio) {
+                                  //                return value;
+                                  //            },
+                                  //            show: false // to turn off the min/max labels.
+                                  //        },
+                                  //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  //    max: 100, // 100 is default
+                                  //    units: ' %',
+                                  //    width: 39 // for adjusting arc thickness
+                                },
+                                color: {
+                                  pattern: ['#FFAA77', '#E5996B', '#B27653', '#996647'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+
+                            </script>
+                          </div>
+                        </div>
+                        <!--  ==================================== do thi GAUGE CAN NANG====================================-->
+                        <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" style="height: 180px !important; ">
+                          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                            <h2 style="font-size:15px; font-weight: bold;" class="mdl-card__title-text">ĐO LẦN 3</h2>
+                          </div>
+                          <div class="mdl-card__supporting-text">
+                            <div id="guage_6"></div>
+                            <script>
+                              var chartGause3_1 = c3.generate({
+                                bindto: "#guage_6",
+                                title: {
+                                  text: 'DATA'
+                                },
+                                data: {
+                                  columns: [
+                                    ['Đo lần 3', 0]
+                                  ],
+                                  type: 'gauge',
+                                  onclick: function (d, i) {
+                                    console.log("onclick", d, i);
+                                  },
+                                  onmouseover: function (d, i) {
+                                    console.log("onmouseover", d, i);
+                                  },
+                                  onmouseout: function (d, i) {
+                                    console.log("onmouseout", d, i);
+                                  }
+                                },
+                                gauge: {
+                                  //        label: {
+                                  //            format: function(value, ratio) {
+                                  //                return value;
+                                  //            },
+                                  //            show: false // to turn off the min/max labels.
+                                  //        },
+                                  //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                                  //    max: 100, // 100 is default
+                                  //    units: ' %',
+                                  //    width: 39 // for adjusting arc thickness
+                                },
+                                color: {
+                                  pattern: ['#7DDC1F', '#70C61B', '#579A15', '#aB8412'], // the three color levels for the percentage values.
+                                  threshold: {
+                                    //            unit: 'value', // percentage is default
+                                    //            max: 200, // 100 is default
+                                    values: [30, 60, 90, 100]
+                                  }
+                                },
+                                size: {
+                                  height: 150
+                                }
+                              });
+                            </script>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <script>
+                        var xValues = [
+                          100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100,
+                          1200, 1300, 1400, 1500, 1600,
+                        ];
+                        var arrDataStream = [
+                          {
+                            data: [],
+                            borderColor: "red",
+                            fill: true,
+                          }, {}, {}
+                        ];
+                        var chartLine = new Chart("myChart", {
+                          type: "line",
+                          data: {
+                            labels: xValues,
+                            datasets: arrDataStream,
+                          },
+                          options: {
+                            legend: { display: false },
+                          },
+                        });
+                      </script> -->
+
+
+                      <script>
+
+                      </script>
+                    </div>
+
+                    <!-- <input data-target-2="chartLine_2"  class="toggle-chart-table-2" type="radio" name="chart_2"
+                      style="margin-left: 100px; color: aqua;"> Biểu đồ đường
+                    <input data-target-2="myTable_2"  class="toggle-chart-table-2" type="radio" name="chart_2"  checked="true"
+                      style="margin-left: 100px" "> Bảng
+                    <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                      style="margin-left: 100px" id="none_chart_2"> Miter -->
+                    <div style="display:flex; width: 100%;">
+                      <div style="width: 50%;">
+                          <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2" checked= "true"
+                          style="margin-left: 25px; color: aqua; font-size: 20px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                        <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                          style="margin-left: 25px; font-size: 20px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
+                        <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                          style="margin-left: 25px ;font-size: 20px;" id="none_chart_2"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
+                      </div>
+
+                      <div style="width: 50%;">
+                              <button id="start/stop" onclick="toggle()" type="button" class="button button1"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                            <span id="btnStart" style="color: #fff ;font-size: 10px"> Start</span>
+
+
+                          </button>
+                            <!-- Rounded switch -->
+                          <button type="button" class="button button2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            id="DolaiBtn">
+                            <!-- onclick="reset()" -->
+                            <!-- <i class="icon2 fa fa-tags" aria-hidden="false"></i> -->
+                            <span style="color: #000 ;font-size: 10px "> Đo lại</span>
+                          </button>
+
+                          <button type="button" id="luotMoi" onclick="newMer()" class="button button3" data-bs-toggle="modal" style="padding: 5px; ">
+                              <!-- <i class="icon2 fa fa-area-chart" aria-hidden="false"></i> -->
+                              <span style="color: #000 ;font-size: 10px"> Lượt mới</span>
+                          </button>
+
+                          <button id="saveModel" type="button" class="button button4" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="padding: 5px">
+                              <!-- <i class="icon2 fa fa-save" aria-hidden="false"></i> -->
+                              <span style="color: #000;font-size: 10px" > Lưu</span>
+                          </button>
+
+                          <input type="file" id= "load-file" hidden="hidden">
+                          <button id = "loadFile-button" type="button" class="button button4" style="padding: 5px">
+                              <!-- <i class="icon2 fa fa-file" aria-hidden="false"></i> -->
+                              <span style="color: #000;font-size: 10px">Xem lại</span>
+                          </button>
+                      </div>
+                    </div>
+                    <!-- <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                      checked="true" style="margin-left: 100px; color: aqua; font-size: 20px;"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Biểu đồ đường</span>
+                    <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                      style="margin-left: 100px; font-size: 20px;" id="none_chart"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Bảng</span>
+                    <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                      style="margin-left: 100px ;font-size: 20px;" id="none_chart_2"> <span
+                      style=" margin-left: 10px;font-size: 30px"> Miter</span> -->
+                  </div>
+
+                </div>
+              </div>
+
+              <!--              <div class="monitor-section control-section monitor w-100">-->
+              <!--                <div class="monitorcontent w-100" style="display: flex;flex-wrap: wrap;">-->
+              <!--                  <div style="display: flex;">-->
+              <!--                    <div style="width: 100%">-->
+              <!--                      <div class="row" style="min-width: max-content;">-->
+              <!--                        <div class="col-md-6" style="-->
+              <!--                            width: 100px;-->
+              <!--                            height: 100px;-->
+              <!--                            border-radius: 100%;-->
+              <!--                            background-color: white;-->
+
+              <!--                            ">-->
+              <!--                        </div>-->
+              <!--                        <div class="col-md-6">-->
+              <!--                          <div>-->
+              <!--                            <b>Đo độ ẩm</b>-->
+              <!--                          </div>-->
+              <!--                          <div>PT100</div>-->
+              <!--                          <div>2021-10-02 11:04</div>-->
+              <!--                        </div>-->
+              <!--                      </div>-->
+              <!--                      <span style="padding-left: 25px;">34,7 C</span>-->
+              <!--                    </div>-->
+              <!--                  </div>-->
+              <!--                  <div class="d-flex">-->
+              <!-- <button id="start/stop" onclick="toggle()" type="button" class="button button1" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="icon1 fa fa-play-circle" aria-hidden="false"></i>
+                        <span id="btn" style="color: #fff"> Start</span>
+                      </button> -->
+              <!-- <button id="start/stop" onclick="toggle()" type="button" class="button button1" data-bs-toggle="modal"
+                data-bs-target="#exampleModal5">
+                <i class="icon1 fa fa-play-circle" aria-hidden="false"></i>
+                <span id="btnStart" style="color: #fff ;font-size: 25px"> Start</span>
+
+
+              </button> -->
+              <!-- Rounded switch -->
+              <!-- <button type="button" class="button button2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                id="DolaiBtn"> -->
+                <!-- onclick="reset()" -->
+                <!-- <i class="icon2 fa fa-tags" aria-hidden="false"></i>
+                <span style="color: #000 ;font-size: 25px "> Đo lại</span>
+              </button> -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel3">
+                        Chọn chế độ đo lại
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="modal-body"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reMesur()">
+                        Lượt hiện tại
+                      </button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="reMesurAll()">
+                        Tất cả
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <button type="button" class="button button2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="reset()">
+                        <i class="icon2 fa fa-tags" aria-hidden="false"></i>
+                        <span style="color: #000"> Đo lại</span>
+                      </button> -->
+
+              <!-- <button type="button" class="button button4" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                        style="padding: 20px; margin: 5px;">
+                        <i class="icon2 fa fa-area-chart" aria-hidden="false"></i>
+                        <span style="color: #000"> Lượt mới</span>
+                      </button> -->
+              <!-- <button type="button" id="luotMoi" onclick="newMer()" class="button button3" data-bs-toggle="modal"
+                style="padding: 5px; ">
+                <i class="icon2 fa fa-area-chart" aria-hidden="false"></i>
+                <span style="color: #000 ;font-size: 25px"> Lượt mới</span>
+              </button> -->
+
+              <!-- <button id="saveModel" type="button" class="button button4" data-bs-toggle="modal"
+                data-bs-target="#exampleModal2" style="padding: 5px">
+                <i class="icon2 fa fa-save" aria-hidden="false"></i>
+                <span style="color: #000;font-size: 25px"> Lưu bản đo</span>
+              </button> -->
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel2">
+                        Lưu kết quả đo
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <span>
+                        Kết quả đo của bài sẽ được lưu với tên <b id="saveFileName">UserName</b>
+                        <br />
+                        - Chọn <b>Đồng ý</b> để lưu dữ liệu <br />
+                        - Chọn <b>Hủy</b> để đóng cửa sổ này <br />
+                      </span>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Hủy
+                      </button>
+                      <button type="button" onclick="saveDataStream()" class="btn btn-primary" data-bs-dismiss="modal">
+                        Đồng ý
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <input type="file" id="load-file" hidden="hidden">
+              <!-- <button id="loadFile-button" type="button" class="button button4" style="padding: 5px">
+                <i class="icon2 fa fa-file" aria-hidden="false"></i>
+                <span style="color: #000;font-size: 25px">Xem lại</span>
+              </button> -->
+
+              <script>
+                const readFileBtn = document.getElementById("load-file");
+                const custom_button = document.getElementById("loadFile-button");
+                custom_button.addEventListener("click", function () {
+                  readFileBtn.click();
+                })
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <!--  ==================================== Content in page Bao Cao====================================-->
+  <div class="tab-pane fade page2 " id="product">
+    <p>
+      Tempora culpa magna ipsum class diam qui dicta ad architecto sequi.
+      Adipisicing, posuere turpis ipsa facilis, ducimus accumsan, nibh
+      velit? Massa aut nulla vitae? Maxime? Integer nihil rhoncus fermentum
+      dolor? Illum mattis ad sed blandit mollit. Condimentum nisi,
+      accusantium egestas mattis penatibus quisquam conubia natus. Sit illum
+      posuere? Aperiam inceptos harum habitasse integer quisquam, iaculis
+      mollis, aenean fugit feugiat molestiae, ab porttitor sed expedita erat
+      animi ea hac fuga ornare magnam erat eu iste vulputate sapiente sem
+      aptent magnam minima platea eius morbi maxime harum, ante quae
+      perspiciatis? Condimentum ridiculus malesuada voluptatum aut eveniet
+      deserunt iaculis, convallis ducimus anim expedita.
+    </p>
+  </div>
+  <!--  ==================================== Content in page Cai Dat====================================-->
+  <div class="tab-pane fade" id="contact">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="">
+          <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne" class="styleButton">
+            <i class="icon1 fa fa-user" aria-hidden="true"></i>Học sinh
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body" style="position: relative;">
+            <form>
+              <div style="display: flex">
+                <div style="width: 40%; margin-right: 5%">
+                  <label>Tên học sinh</label><br />
+                  <input type="text" class="styleInput use-keyboard-input" />
+                </div>
+                <div style="width: 40%; margin-left: 5%">
+                  <label>Tên học sinh</label><br />
+                  <input id="usernameInput" type="text" class="styleInput use-keyboard-input" />
+                </div>
+              </div>
+            </form>
+            <div class="save" id="saveUsername">
+              <i class="icon1 fa fa-save" aria-hidden="true"></i>Lưu
+            </div>
+            <div style="margin-top: 100px">
+              Vui lòng nhập tên và lớp của bạn Vì thông tin này sẽ được đính
+              kèm kết quả thí nhiệm, bởi vậy hãy nhập chính xác thông tin
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="styleButton collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            <i class="icon1 fa fa-wifi" aria-hidden="true"></i>Cài đặt mạng
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body" style="position: relative; height: 200px">
+            <form>
+              <div style="display: flex">
+                <div style="width: 40%; margin-right: 5%">
+                  <label>Wifi</label><br />
+                  <input id="wifinameInput" type="text" class="styleInput use-keyboard-input" />
+                </div>
+                <div style="width: 40%; margin-left: 5%">
+                  <label>Mật khẩu</label><br />
+                  <input id="passwordInput" type="text" class="styleInput use-keyboard-input" />
+                </div>
+              </div>
+            </form>
+            <div id="connectWifiBtn" class="save" style="text-align: center">Kết nối</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="styleButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            <i class="icon1 fa fa-cog" aria-hidden="true"></i>Cài đặt khác
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body" style="position: relative; height: 200px">
+            <div>Chọn ngôn ngữ muốn hiển thị</div>
+            <div style="font-weight: bold">
+              <input type="radio" name="nn" /> Tiếng Việt
+              <input type="radio" name="nn" /> English
+            </div>
+            <div class="save">
+              <i class="icon1 fa fa-save" aria-hidden="true"></i>Lưu
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  ==================================== Thong Tin====================================-->
+    <div class="information">
+      <div class="titleIn4">
+        <i class="fas fa-info-circle"></i>Thông tin
+      </div>
+      <div>
+        Long body text - Minantia non modo formaeque in meis acervo
+        formaeque gravitate erat indigestaque habentia fixo mutatas aliud
+        orbis retinebat qui non alta Long body text - Minantia non modo
+        formaeque in meis acervo formaeque gravitate erat indigestaque
+        habentia fixo mutatas aliud orbis retinebat qui non alta Long body
+        text - Minantia non modo formaeque in meis acervo formaeque
+        gravitate erat indigestaque habentia fixo mutatas aliud orbis
+        retinebat qui non alta Long body text - Minantia non modo formaeque
+        in meis acervo formaeque gravitate erat indigestaque habentia fixo
+        mutatas aliud orbis retinebat qui non alta
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!--  ==================================== SCript ====================================-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Import and configure the Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="/jquery-3.3.1.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/main.js"></script>
+  <script src="/keyboard/keyboard.js"></script>
+
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+  var socket = io();
+  // socket.on('connection',function(){
+  // })
+  var data;
+  var listDeviceOld = [];
+  var listDeviceNew;
+  var deviceName;
+  var deviceNameDetails;
+  var lastValue;
+  var deviceId;
+  var countMesur = 1;
+  var countMesur2 = 1;
+  var dataCounter = 0;
+  var arrData1 = [];
+  var arrData2 = [];
+  var arrData3 = [];
+  var arrData1_2 = [];
+  var arrData2_2 = [];
+  var arrData3_2 = [];
+  //var new_arr = ['Lần đo ' + countMesur].concat(arrData1);
+  var arrToaDo1 = Array.from(Array(100).keys());
+  var arrToaDo2 = Array.from(Array(100).keys());
+  var arrToaDo3 = Array.from(Array(100).keys());
+  document.getElementById("DolaiBtn").disabled = true;
+  document.getElementById("DolaiBtn").style.backgroundColor = "gray";
+  document.getElementById("luotMoi").disabled = true;
+  document.getElementById("luotMoi").style.backgroundColor = "gray";
+  document.getElementById("saveModel").disabled = true;
+  document.getElementById("saveModel").style.backgroundColor = "gray";
+  document.getElementById("loadFile-button").style.backgroundColor = "white";
+
+  var clicked = false;
+  var clicked2 = false;
+  document.getElementById('saveUsername').addEventListener('click', function () {
+    document.getElementById('username').innerHTML = document.getElementById('usernameInput').value;
+    document.getElementById("saveFileName").innerText = document.getElementById('usernameInput').value;
+  });
+  document.getElementById('poweroff').addEventListener('click', function () {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/v1/shutdown", true);
+    xhttp.send();
+  });
+  document.getElementById('connectWifiBtn').addEventListener('click', function () {
+    let obj = {
+      wifiname: document.getElementById('wifinameInput').value,
+      password: document.getElementById('passwordInput').value
+    }
+    socket.emit("connectWiFi", obj);
+  });
+
+  socket.on('listDevice', function (msg) {
+    // new list Device
+    listDeviceOld = msg;
+    for (let i = 0; i < document.getElementById("queueDevice").childElementCount; i++) document.getElementById(i.toString()).style.backgroundColor = "white";
+    if (deviceNameDetails !== null) {
+      let index = listDeviceOld.findIndex(element => element.deviceName === deviceNameDetails);
+      if (index > -1) {
+        document.getElementById(index.toString()).style.backgroundColor = "#05b362";
+        document.getElementById("lastValue" + index.toString()).innerHTML = lastValue;
+        //document.getElementById(index.toString()).classList.add('green');
+        document.getElementById(index.toString()).addEventListener('click', () => {
+          deviceId = listDeviceOld[index].deviceId;
+        });
+      }
+      else {
+        let obj = {
+          deviceType: deviceName,
+          deviceName: deviceNameDetails,
+          lastValue: lastValue,
+          deviceId: listDeviceOld.length,
+        }
+        doAjaxRequest("POST", "/v1/addDevice", obj);
+      }
+    }
+  });
+  var chartLinee = c3.generate({
+    bindto: '#chartLine',
+    padding: {
+      left: 40,
+      right: 0
+    },
+    point: {
+      show: false
+    },
+    grid: {
+      x: {
+        show: true
+      },
+      y: {
+        show: true
+      }
+    },
+    data: {
+      type: "spline",
+      x: 'x',
+      columns: [
+        ['x', ...arrToaDo1],
+        ['Lần đo 1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần đo 2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần đo 3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+      ],
+      connectNull: false
+    },
+    axis: {
+      x: {
+        type: 'number',
+        tick: {
+          format: '%M:%S'
+        },
+        label: {
+          text: 'Time',
+          position: 'outer-center',
+        }
+      },
+      y: {
+        label: {
+          text: '',
+          position: 'outer-middle',
+        }
+      }
+    }
+  });
+
+  var chartLinee2 = c3.generate({
+    bindto: '#chartLine_2',
+    padding: {
+      left: 30,
+      right: 30
+    },
+    point: {
+      show: false
+    },
+    grid: {
+      x: {
+        show: true
+      },
+      y: {
+        show: true
+      }
+    },
+    data: {
+      type: "spline",
+      x: 'x2',
+      columns: [
+        ['x2', ...arrToaDo2],
+        ['Lần đo 1_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần đo 2_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần đo 3_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+      ],
+      connectNull: false
+    },
+    axis: {
+      x: {
+        type: 'number',
+        tick: {
+          format: '%M:%S'
+        },
+        label: {
+          text: 'Time',
+          position: 'outer-center',
+        }
+      },
+      y: {
+        label: {
+          text: '',
+          position: 'outer-middle',
+        }
+      }
+    }
+  });
+
+  var x1 = 0;
+  socket.on('data', function (msg) {
+    let dataSplit = msg.split(',');
+    deviceName = dataSplit[0].split('@')[1];
+    deviceNameDetails = dataSplit[1];
+    lastValue = dataSplit[2];
+    if (clicked === true) {
+      if (countMesur == 1) {
+        //arrToaDo1.push(dataCounter);
+        arrData1.push(lastValue);
+        chartLinee.load({
+          columns: [
+            ['Lần đo 1', ...arrData1]
+          ],
+        });
+        //tableCreateRowData(x1++, 1, lastValue);
+        chartGause1.load({
+          columns: [
+            ['Đo lần 1', lastValue]
+          ]
+        });
+      }
+      else if (countMesur == 2) {
+        let x2 = 0;
+
+        arrData2.push(lastValue);
+        chartLinee.load({
+          columns: [
+            ['Lần đo 2', ...arrData2]
+          ],
+        });
+        chartGause2.load({
+          columns: [
+            ['Đo lần 2', lastValue]
+          ]
+        });
+      } else if (countMesur == 3) {
+        let x3 = 0;
+        arrData3.push(lastValue);
+        chartLinee.load({
+          columns: [
+            ['Lần đo 3', ...arrData3]
+          ],
+        });
+        chartGause3.load({
+          columns: [
+            ['Đo lần 3', lastValue]
+          ]
+        });
+      }
+    }
+
+    if (clicked2 === true) {
+      if (countMesur2 == 1) {
+        //arrToaDo1.push(dataCounter);
+        arrData1_2.push(lastValue);
+        chartLinee2.load({
+          columns: [
+            ['Lần đo 1_2', ...arrData1_2]
+          ],
+        });
+        //tableCreateRowData(x1++, 1, lastValue);
+        chartGause1_1.load({
+          columns: [
+            ['Đo lần 1', lastValue]
+          ]
+        });
+      }
+      else if (countMesur2 == 2) {
+        let x2 = 0;
+
+        arrData2_2.push(lastValue);
+        chartLinee2.load({
+          columns: [
+            ['Lần đo 2_2', ...arrData2_2]
+          ],
+        });
+        chartGause2_1.load({
+          columns: [
+            ['Đo lần 2', lastValue]
+          ]
+        });
+      } else if (countMesur2 == 3) {
+        let x3 = 0;
+        arrData3_2.push(lastValue);
+        chartLinee2.load({
+          columns: [
+            ['Lần đo 3_2', ...arrData3_2]
+          ],
+        });
+        chartGause3_1.load({
+          columns: [
+            ['Đo lần 3', lastValue]
+          ]
+        });
+      }
+    }
+  });
+  function newMer() {
+    countMesur += 1;
+    if (countMesur === 3) {
+      document.getElementById("luotMoi").disabled = true;
+      document.getElementById("luotMoi").style.backgroundColor = "gray";
+    }
+  }
+  function toggle() {
+    if (!clicked == true) {
+      clicked2 = true;
+      clicked = true;
+      document.getElementById("btnStart").innerHTML = "Stop";
+      document.getElementById("start/stop").style.backgroundColor = "red";
+      document.getElementById("DolaiBtn").disabled = false;
+      document.getElementById("DolaiBtn").style.backgroundColor = "yellow";
+      document.getElementById("luotMoi").disabled = false;
+      document.getElementById("luotMoi").style.backgroundColor = "white";
+      document.getElementById("saveModel").disabled = true;
+      document.getElementById("saveModel").style.backgroundColor = "gray";
+      document.getElementById("loadFile-button").style.backgroundColor = "gray";
+    }
+    else {
+      clicked = false;
+      document.getElementById("btnStart").innerHTML = "Start";
+      document.getElementById("start/stop").style.backgroundColor = "#4caf50";
+      document.getElementById("luotMoi").disabled = true;
+      document.getElementById("luotMoi").style.backgroundColor = "gray";
+      document.getElementById("DolaiBtn").disabled = true;
+      document.getElementById("DolaiBtn").style.backgroundColor = "gray";
+      document.getElementById("saveModel").disabled = false;
+      document.getElementById("saveModel").style.backgroundColor = "white";
+      document.getElementById("loadFile-button").style.backgroundColor = "white";
+      reMesur();
+      let obj = {
+        deviceType: deviceName,
+        deviceName: deviceNameDetails,
+        lastValue: lastValue,
+        deviceId: deviceId
+      }
+      var xhttpUpdate = new XMLHttpRequest();
+      xhttpUpdate.open("POST", "/v1/updateDevice", true);
+      xhttpUpdate.setRequestHeader('Content-Type', 'application/json');
+      xhttpUpdate.send(JSON.stringify(obj));
+    }
+  }
+
+  function reMesur() {
+    if (clicked === false) {
+      return 0;
+    }
+    if (countMesur === 1) {
+      arrData1 = [];
+      // chartLinee.unload({ ids: 'Lần đo 1' });
+      chartLinee.flush()
+    }
+    else if (countMesur === 2) {
+      arrData2 = [];
+      // chartLinee.unload({ ids: ['Lần đo 1', 'Lần đo 2'] });
+      chartLinee.flush()
+    }
+    else if (countMesur === 3) {
+      arrData3 = [];
+      chartLinee.flush();
+    }
+  }
+
+  function reMesurAll() {
+    countMesur = 1;
+    arrData1 = [];
+    arrData2 = [];
+    arrData3 = [];
+    chartLinee.flush();
+    document.getElementById("luotMoi").disabled = false;
+    document.getElementById("luotMoi").style.backgroundColor = "white";
+  }
+  function saveDataStream() {
+    let device = {
+      deviceType: deviceName,
+      deviceName: deviceNameDetails,
+      Lan1: arrData1,
+      Lan2: arrData2,
+      Lan3: arrData3
+    }
+    let obj = {
+      fileName: document.getElementById("saveFileName").innerText,
+      Data: device
+    }
+    console.log("save Data");
+    socket.emit('saveData', obj);
+  }
+  //document.getElementById('0').addEventListener()
+  function tableCreateRowData(row, dataCount, data) {
+    var table = document.getElementById('myTable');
+    var rowId = 'tr' + row;
+    var dataCountId = 'td' + row;
+    if (dataCount === 1) {
+      var tr = document.createElement('tr');
+      tr.setAttribute("id", rowId);
+    }
+    else {
+      var tr = document.getElementById(rowId);
+    }
+    var td = document.createElement('td');
+    td.setAttribute("id", dataCountId);
+    table.appendChild(tr);
+    tr.appendChild(td);
+    td.appendChild(document.createTextNode(data));
+  }
+
+  async function doAjaxRequest(method, url, data) {
+    let result = await makeRequest(method, url, data);
+  }
+
+  function makeRequest(method, url, data) {
+    return new Promise(function (resolve, reject) {
+      let xhr = new XMLHttpRequest();
+      xhr.open(method, url, true);
+      xhr.onload = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          resolve(xhr.response);
+          location.reload();
+        } else {
+          reject({
+            status: this.status,
+            statusText: xhr.statusText
+          });
+        }
+      };
+      xhr.onerror = function () {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      };
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(data));
+    });
+  }
+
+  var fileInput = document.getElementById("load-file");
+  fileInput.onchange = function () {
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function (progressEvent) {
+      // Entire file
+      console.log(this.result);
+      const obj = JSON.parse(this.result);
+      console.log(obj);
+
+      reMesurAll();
+      chartLinee.load({
+        columns: [
+          ['Lần đo 1', ...obj.Lan1],
+          ['Lần đo 2', ...obj.Lan2],
+          ['Lần đo 3', ...obj.Lan3]
+        ],
+      });
+      chartGause1.load({
+        columns: [
+          ['Đo lần 1', obj.Lan1[1]]
+        ]
+      });
+      chartGause2.load({
+        columns: [
+          ['Đo lần 2', obj.Lan2[1]]
+        ]
+      });
+      chartGause3.load({
+        columns: [
+          ['Đo lần 3', obj.Lan3[1]]
+        ]
+      });
+    };
+
+    reader.readAsText(file);
+  };
+
+
+  // Do thi 2
+  function toggle2() {
+    if (!clicked2 == true) {
+      clicked2 = true;
+      document.getElementById("btnStart2").innerHTML = "Stop";
+      document.getElementById("start/stop2").style.backgroundColor = "red";
+      document.getElementById("DolaiBtn2").disabled = false;
+      document.getElementById("DolaiBtn2").style.backgroundColor = "yellow";
+      document.getElementById("luotMoi2").disabled = false;
+      document.getElementById("luotMoi2").style.backgroundColor = "white";
+      document.getElementById("saveModel2").disabled = true;
+      document.getElementById("saveModel2").style.backgroundColor = "gray";
+      document.getElementById("loadFile-button2").style.backgroundColor = "gray";
+    }
+    else {
+      clicked2 = false;
+      document.getElementById("btnStart2").innerHTML = "Start";
+      document.getElementById("start/stop2").style.backgroundColor = "#4caf50";
+      document.getElementById("luotMoi2").disabled = true;
+      document.getElementById("luotMoi2").style.backgroundColor = "gray";
+      document.getElementById("DolaiBtn2").disabled = true;
+      document.getElementById("DolaiBtn2").style.backgroundColor = "gray";
+      document.getElementById("saveModel2").disabled = false;
+      document.getElementById("saveModel2").style.backgroundColor = "white";
+      document.getElementById("loadFile-button2").style.backgroundColor = "white";
+      reMesur2();
+      let obj = {
+        deviceType: deviceName,
+        deviceName: deviceNameDetails,
+        lastValue: lastValue,
+        deviceId: deviceId
+      }
+      var xhttpUpdate = new XMLHttpRequest();
+      xhttpUpdate.open("POST", "/v1/updateDevice", true);
+      xhttpUpdate.setRequestHeader('Content-Type', 'application/json');
+      xhttpUpdate.send(JSON.stringify(obj));
+    }
+  }
+
+  function reMesur2() {
+    if (clicked2 === false) {
+      return 0;
+    }
+    if (countMesur2 === 1) {
+      arrData1_2 = [];
+      // chartLinee.unload({ ids: 'Lần đo 1' });
+      chartLinee2.flush()
+    }
+    else if (countMesur2 === 2) {
+      arrData2_2 = [];
+      // chartLinee.unload({ ids: ['Lần đo 1', 'Lần đo 2'] });
+      chartLinee2.flush()
+    }
+    else if (countMesur2 === 3) {
+      arrData3_2 = [];
+      chartLinee2.flush();
+    }
+  }
+
+  function reMesurAll2() {
+    countMesur2 = 1;
+    arrData1_2 = [];
+    arrData2_2 = [];
+    arrData3_2 = [];
+    chartLinee2.flush();
+    document.getElementById("luotMoi2").disabled = false;
+    document.getElementById("luotMoi2").style.backgroundColor = "white";
+  }
+</script>
+
+<!--Du lieu tra ve-->
+
+<!-- <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC2q4rXmLAmV2d5HKLWlUWY3MAvYLPMoso",
+    authDomain: "iotguy-dashboard.firebaseapp.com",
+    databaseURL: "https://iotguy-dashboard.firebaseio.com",
+    projectId: "iotguy-dashboard",
+    storageBucket: "iotguy-dashboard.appspot.com",
+    messagingSenderId: "249564343788",
+    appId: "1:249564343788:web:b7004b7c8e01eba925a4c9",
+    measurementId: "G-NDWXDZ2CSV"
+  };
+  firebase.initializeApp(config);
+  firebase.analytics();
+
+</script> -->
+
+</html>
