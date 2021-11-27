@@ -533,11 +533,11 @@
 
                         <div style="width: 40%; margin-top: 20px;">
                           <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked= "true"
-                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Đường</span>
+                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px ;margin-bottom: 5px;"> Đường</span>
                         <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
-                          style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
+                          style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px; margin-bottom: 6px;"> Bảng</span>
                         <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
-                          style="margin-left: 25px ;font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
+                          style="margin-left: 25px ;font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px; margin-bottom: 7px;""> Miter</span>
                         </div>
                       </div>
 
@@ -825,7 +825,7 @@
                           </button>
                       </div>
 
-                      <div style="width: 45%; margin-top: 20px;">
+                      <div style="width: 45%; margin-top: 20px; margin-left: 20px;">
                         <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2" checked= "true"
                         style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Đường</span>
                       <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
@@ -1364,7 +1364,7 @@
         arrData1_2.push(lastValue);
         chartLinee2.load({
           columns: [
-            ['Lần đo 1_2', ...arrData1_2]
+            ['Lần 1_2', ...arrData1_2]
           ],
         });
         //tableCreateRowData(x1++, 1, lastValue);
@@ -1380,12 +1380,12 @@
         arrData2_2.push(lastValue);
         chartLinee2.load({
           columns: [
-            ['Lần đo 2_2', ...arrData2_2]
+            ['Lần 2_2', ...arrData2_2]
           ],
         });
         chartGause2_1.load({
           columns: [
-            ['Đo lần 2', lastValue]
+            ['Đo 2', lastValue]
           ]
         });
       } else if (countMesur2 == 3) {
@@ -1393,12 +1393,12 @@
         arrData3_2.push(lastValue);
         chartLinee2.load({
           columns: [
-            ['Lần đo 3_2', ...arrData3_2]
+            ['Lần 3_2', ...arrData3_2]
           ],
         });
         chartGause3_1.load({
           columns: [
-            ['Đo lần 3', lastValue]
+            ['Đo 3', lastValue]
           ]
         });
       }
