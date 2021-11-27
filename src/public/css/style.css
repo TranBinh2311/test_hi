@@ -5,9 +5,7 @@
   font-family: arial, sans-serif;
   /* height: 100vh !important; */
 }
-html{
-  height: 100vh !important;
-}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -64,7 +62,7 @@ tr:nth-child(even) {
 }
 
 .body {
-  height: 100vh;
+  height: 80vh !important;
   display: flex;
 }
 
@@ -390,7 +388,7 @@ input[type=radio] {
 .button {
   left: 100px;
   height: 75px;
-  width: 85px;
+  width: 90px;
   border: none;
   color: white;
   padding: 3px 2px;
