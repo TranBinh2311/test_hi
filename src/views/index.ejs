@@ -317,9 +317,9 @@
                       <table style="overflow: auto;">
                         <tr>
                           <th>Thời gian</th>
-                          <th>Lần đo 1</th>
-                          <th>Lần đo 2</th>
-                          <th>Lần đo 3</th>
+                          <th>Lần 1</th>
+                          <th>Lần 2</th>
+                          <th>Lần 3</th>
                         </tr>
                       </table>
                     </div>
@@ -533,7 +533,7 @@
 
                         <div style="width: 40%; margin-top: 20px;">
                           <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked= "true"
-                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Đường</span>
                         <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
                           style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
                         <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
@@ -585,9 +585,9 @@
                       <table style="overflow: auto;">
                         <tr>
                           <th>Thời gian</th>
-                          <th>Lần đo 1</th>
-                          <th>Lần đo 2</th>
-                          <th>Lần đo 3</th>
+                          <th>Lần 1</th>
+                          <th>Lần 2</th>
+                          <th>Lần 3</th>
                         </tr>
                       </table>
                     </div>
@@ -827,7 +827,7 @@
 
                       <div style="width: 45%; margin-top: 20px;">
                         <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2" checked= "true"
-                        style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                        style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Đường</span>
                       <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
                         style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
                       <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
@@ -1232,9 +1232,9 @@
       x: 'x',
       columns: [
         ['x', ...arrToaDo1],
-        ['Lần đo 1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        ['Lần đo 2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        ['Lần đo 3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        ['Lần 1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần 2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần 3', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
       ],
       connectNull: false
     },
@@ -1245,8 +1245,8 @@
           format: '%M:%S'
         },
         label: {
-          text: 'Time',
-          position: 'outer-center',
+          text: 'Mẫu',
+          position: 'outer-end',
         }
       },
       y: {
@@ -1280,9 +1280,9 @@
       x: 'x2',
       columns: [
         ['x2', ...arrToaDo2],
-        ['Lần đo 1_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        ['Lần đo 2_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        ['Lần đo 3_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+        ['Lần 1_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần 2_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        ['Lần 3_2', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
       ],
       connectNull: false
     },
@@ -1318,13 +1318,13 @@
         arrData1.push(lastValue);
         chartLinee.load({
           columns: [
-            ['Lần đo 1', ...arrData1]
+            ['Lần 1', ...arrData1]
           ],
         });
         //tableCreateRowData(x1++, 1, lastValue);
         chartGause1.load({
           columns: [
-            ['Đo lần 1', lastValue]
+            ['Đo 1', lastValue]
           ]
         });
       }
@@ -1334,12 +1334,12 @@
         arrData2.push(lastValue);
         chartLinee.load({
           columns: [
-            ['Lần đo 2', ...arrData2]
+            ['Lần 2', ...arrData2]
           ],
         });
         chartGause2.load({
           columns: [
-            ['Đo lần 2', lastValue]
+            ['Đo 2', lastValue]
           ]
         });
       } else if (countMesur == 3) {
@@ -1347,12 +1347,12 @@
         arrData3.push(lastValue);
         chartLinee.load({
           columns: [
-            ['Lần đo 3', ...arrData3]
+            ['Lần 3', ...arrData3]
           ],
         });
         chartGause3.load({
           columns: [
-            ['Đo lần 3', lastValue]
+            ['Đo 3', lastValue]
           ]
         });
       }
