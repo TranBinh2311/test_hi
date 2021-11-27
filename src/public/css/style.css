@@ -379,8 +379,8 @@ div.chart {
 
 input[type=radio] {
   border: 0px;
-  width: 100%;
-  height: 1em;
+  width: 20%;
+  height: 0.1em;
 }
 
 .button {
