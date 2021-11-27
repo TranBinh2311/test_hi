@@ -111,7 +111,7 @@
   <div class="tab-content page2">
     <!--  ==================================== Content in page Thi Nghiem ====================================-->
     <div class="tab-pane fade show active" id="home">
-      <div class="body row clear-fix">
+      <div class="body row ">
         <div id="queueDevice" class="list col-md-3 col-sm-3" style="padding-left: 25px">
           <% listDeivce.forEach(function(listd) { %>
             <div id="<%=listd.deviceId%>" class="item opensection" data-target="monitor-section">
@@ -1214,7 +1214,7 @@
     bindto: '#chartLine',
     padding: {
       left: 40,
-      right: 0
+      right: 10
     },
     point: {
       show: false
@@ -1262,7 +1262,7 @@
     bindto: '#chartLine_2',
     padding: {
       left: 30,
-      right: 30
+      right: 10
     },
     point: {
       show: false
