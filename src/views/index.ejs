@@ -497,14 +497,7 @@
                     <input data-target="miterChart_1" class="toggle-chart-table" type="radio" name="chart"
                       style="margin-left: 100px" id="none_chart"> Miter -->
                       <div style="display:flex; width: 100%;">
-                        <div style="width: 50%;">
-                            <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked= "true"
-                            style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
-                          <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
-                            style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
-                          <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
-                            style="margin-left: 25px ;font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
-                        </div>
+                        
   
                         <div style="width: 50%;">
                                 <button id="start/stop" onclick="toggle()" type="button" class="button button1"
@@ -536,6 +529,15 @@
                                 <!-- <i class="icon2 fa fa-file" aria-hidden="false"></i> -->
                                 <span style="color: #000;font-size: 10px">Xem lại</span>
                             </button>
+                        </div>
+
+                        <div style="width: 50%;">
+                          <input data-target="chartLine" class="toggle-chart-table" type="radio" name="chart" checked= "true"
+                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                        <input data-target="myTable" class="toggle-chart-table" type="radio" name="chart"
+                          style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
+                        <input data-target="miterChart" class="toggle-chart-table" type="radio" name="chart"
+                          style="margin-left: 25px ;font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
                         </div>
                       </div>
 
@@ -789,14 +791,7 @@
                     <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
                       style="margin-left: 100px" id="none_chart_2"> Miter -->
                     <div style="display:flex; width: 100%;">
-                      <div style="width: 50%;">
-                          <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2" checked= "true"
-                          style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
-                        <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
-                          style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
-                        <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
-                          style="margin-left: 25px ;font-size: 200px;" id="none_chart_2"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
-                      </div>
+                      
 
                       <div style="width: 50%;">
                               <button id="start/stop" onclick="toggle()" type="button" class="button button1"
@@ -829,6 +824,15 @@
                               <span style="color: #000;font-size: 10px">Xem lại</span>
                           </button>
                       </div>
+
+                      <div style="width: 50%;">
+                        <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2" checked= "true"
+                        style="margin-left: 25px; color: aqua; font-size: 200px;"> <span style=" margin-left: 5px;font-size: 14px"> Biểu đồ đường</span>
+                      <input data-target-2="myTable_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                        style="margin-left: 25px; font-size: 200px;" id="none_chart"> <span style=" margin-left: 5px;font-size: 14px"> Bảng</span>
+                      <input data-target-2="miterChart_2" class="toggle-chart-table-2" type="radio" name="chart_2"
+                        style="margin-left: 25px ;font-size: 200px;" id="none_chart_2"> <span style=" margin-left: 5px;font-size: 14px"> Miter</span>
+                    </div>
                     </div>
                     <!-- <input data-target-2="chartLine_2" class="toggle-chart-table-2" type="radio" name="chart_2"
                       checked="true" style="margin-left: 100px; color: aqua; font-size: 20px;"> <span
@@ -1411,27 +1415,27 @@
     if (!clicked == true) {
       clicked2 = true;
       clicked = true;
-      document.getElementById("btnStart").innerHTML = "Stop";
-      document.getElementById("start/stop").style.backgroundColor = "red";
-      document.getElementById("DolaiBtn").disabled = false;
-      document.getElementById("DolaiBtn").style.backgroundColor = "yellow";
-      document.getElementById("luotMoi").disabled = false;
-      document.getElementById("luotMoi").style.backgroundColor = "white";
-      document.getElementById("saveModel").disabled = true;
-      document.getElementById("saveModel").style.backgroundColor = "gray";
-      document.getElementById("loadFile-button").style.backgroundColor = "gray";
+      document.getElementById("btnStart2").innerHTML = "Stop";
+      document.getElementById("start/stop2").style.backgroundColor = "red";
+      document.getElementById("DolaiBtn2").disabled = false;
+      document.getElementById("DolaiBtn2").style.backgroundColor = "yellow";
+      document.getElementById("luotMoi2").disabled = false;
+      document.getElementById("luotMoi2").style.backgroundColor = "white";
+      document.getElementById("saveModel2").disabled = true;
+      document.getElementById("saveModel2").style.backgroundColor = "gray";
+      document.getElementById("loadFile-button2").style.backgroundColor = "gray";
     }
     else {
       clicked = false;
-      document.getElementById("btnStart").innerHTML = "Start";
-      document.getElementById("start/stop").style.backgroundColor = "#4caf50";
-      document.getElementById("luotMoi").disabled = true;
-      document.getElementById("luotMoi").style.backgroundColor = "gray";
-      document.getElementById("DolaiBtn").disabled = true;
-      document.getElementById("DolaiBtn").style.backgroundColor = "gray";
-      document.getElementById("saveModel").disabled = false;
-      document.getElementById("saveModel").style.backgroundColor = "white";
-      document.getElementById("loadFile-button").style.backgroundColor = "white";
+      document.getElementById("btnStart2").innerHTML = "Start";
+      document.getElementById("start/stop2").style.backgroundColor = "#4caf50";
+      document.getElementById("luotMoi2").disabled = true;
+      document.getElementById("luotMoi2").style.backgroundColor = "gray";
+      document.getElementById("DolaiBtn2").disabled = true;
+      document.getElementById("DolaiBtn2").style.backgroundColor = "gray";
+      document.getElementById("saveModel2").disabled = false;
+      document.getElementById("saveModel2").style.backgroundColor = "white";
+      document.getElementById("loadFile-button2").style.backgroundColor = "white";
       reMesur();
       let obj = {
         deviceType: deviceName,
