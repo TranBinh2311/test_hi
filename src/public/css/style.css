@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: arial, sans-serif;
+  height: 100vh !important;
 }
 html{
   height: 100vh !important;
