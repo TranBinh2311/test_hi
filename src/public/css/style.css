@@ -63,6 +63,7 @@ tr:nth-child(even) {
 
 .body {
   height: 80vh !important;
+  width: 80vh !important;
   display: flex;
 }
 
